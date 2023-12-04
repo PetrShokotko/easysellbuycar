@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Срочный выкуп авто. Автовыкуп Днепр. 0986952105</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;800&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+        integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/media.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="header-logo">
+                <span class="shock-logo">Shock</span><span class="auto-logo">Auto</span></span>
+            </div>
+            <div class="header-about">
+                <h2>Срочный Автовыкуп</h2>
+                <p><img class="dnipro-logo" src="./images/dnipro-logo.svg" alt="dnipro-city-logo">в г.Днепр и области
+                </p>
+            </div>
+            <div class="online-status">
+                <div class="online-dot"></div>
+                <span class="status-text">Сейчас работаем</span>
+            </div>
+            <address class="contacts-list">
+                <ul class="header-contact-list list">
+                    <li class="header-list-item">
+                        <a class="header-link header-tel link" href="tel:+380986952105">
+                            <svg class="phone-icon header-icon" width="20px" height="20px">
+                                <use href="./images/icons.svg#icon-phone"></use>
+                            </svg>
+                            <span class="header-tel-span">(098) 695-21-05</span>
+                        </a>
+                    </li>
+                    <li class="header-list-item viber-item">
+                        <a class="header-link viber" href="viber://chat?number=<+380979097544>">
+                            <svg class="header-icon" width="20px" height="20px">
+                                <use href="./images/icons.svg#icon-viber"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="header-list-item telegram-item">
+                        <a class="header-link telegram" href="https://t.me/ShokotkoPetr">
+                            <svg class="header-icon" width="20px" height="20px">
+                                <use href="./images/icons.svg#icon-telegram"></use>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </address>
+            <button class="header-btn" id="openModal">
+                Оценить авто
+            </button>
+        </div>
+
+    </header>
+    <main>
+        <section class="hero-section">
+            <div class="hero-container container">
+                <div class="hero-row">
+                <div class="hero-title-wrap">
+                    <p class="hero-title-text">КУПИМ ВАШУ МАШИНУ В ДЕНЬ ПОДАЧИ ЗАЯВКИ</p>
+                    <h1 class="hero-title">Срочный<br>
+                        выкуп авто</h1>
+                    <h2 class="hero-title-location">Работаем в г.Днепр, а так же по всей Украине</h2>
+                    <p class="hero-title-text">Получите моментальную оценку Вашего авто, заполнив несколько полей ниже!
+                    </p>
+                </div>
+                <div class="image-container">
+                    <img src="./images/bmwx6.png" alt="BMW X6" class="image-animation">
+                    <img src="./images/crashcar.png" alt="Crashed Car" class="image-animation">
+                </div>
+                </div>
+                <div class="hero-form-window">
+                    <div class="hero-form-window-title">
+                    <h2 class="window-form-title"> Оценка стоимости авто за 5 минут</h2>
+                    </div>
+                <div class="hero-form-row"> 
+                    <div class="hero-form-window-text">
+                    <p class="window-form-text">Это поможет нам быстрее сделать вам предложение!</p>
+                <img src="./images/clock.png" alt="clock" class="image-form-window"></div>
+
+<div class="hero-form-wrap">
+                    <form class="hero-form" id="myForm">
+                        <label class="form-label" for="makes">
+                            <span class="input-label-span">Марка <span class="red-required">*<span></span>
+                            <span class="input-wrap">
+                                <input type="text" placeholder="Выберите марку авто" name="makes" class="hero-input makes" id="makes"
+                                    list="makesList" required>
+                                <datalist id="makesList"></datalist>
+                            </span>
+                        </label>
+                    
+                        <label class="form-label" for="model">
+                            <span class="input-label-span">Модель <span class="red-required">*<span></span>
+                            <span class="input-wrap">
+                                <input type="text" placeholder="Выберите модель" name="model" class="hero-input model" id="model" list="modelList"
+                                    required>
+                                <datalist id="modelList"></datalist>
+                            </span>
+                        </label>
+                    
+                        <label class="form-label" for="year">
+                            <span class="input-label-span">Год</span>
+                            <span class="input-wrap">
+                                <select name="year" class="hero-input year" id="year">
+                                    <option  value="">Выберите год</option>
+                                </select>
+                            </span>
+                        </label>
+                    
+                        <label class="form-label" for="price">
+                            <span class="input-label-span">Желаемая цена</span>
+                            <span class="input-wrap">
+                                <input type="text" placeholder="Укажите желаемую цену" name="price" class="hero-input price" id="price">
+                            </span>
+                        </label>
+                    
+                        <label class="form-label" for="name">
+                            <span class="input-label-span">Введите имя <span class="red-required">*<span></span>
+                            <span class="input-wrap">
+                                <input type="text" placeholder="Введите ваше имя" name="name" class="hero-input name" id="name" required>
+                            </span>
+                        </label>
+                    
+                        <label class="form-label" for="number">
+                            <span class="input-label-span">Введите номер <span class="red-required">*<span></span>
+                            <span class="input-wrap">
+                                <input type="text" placeholder="Введите ваш номер" name="number" class="hero-input number-mask number" id="number" required>
+                            </span>
+                        </label>
+                    
+                        <button class="hero-submit-btn form-submit-btn" type="submit">Отправить</button>
+                    </form>
+                    </div>
+                    </div>
+                    
+                </div>
+                </div>
+        </section>
+        <section class="about-section">
+            <div class="about-container container">
+                <!-- <h2>Мы предоставляем</h2> -->
+                <ul class="about-list list">
+                    <li class="about-list-item"><img class="about-img" src="./images/checkmat.svg" alt="checkmat-img" width="30px"
+                            height="30px">
+                        <div class="about-wrap">
+                            <h3 class="about-wrap-title">Моментальная оценка
+                                рыночной стоимости</h3>
+                            <p class="about-wrap-text">Объективно оцениваем, анализируем все факторы и рассчитываем наиболее близкую
+                                к реальной стоимость авто.</p>
+                        </div>
+                    </li>
+                    <li class="about-list-item"><img class="about-img" src="./images/checkmat.svg" alt="checkmat-img" width="30px"
+                            height="30px">
+                        <div class="about-wrap">
+                            <h3 class="about-wrap-title">Индивидуальный подход
+                                к каждому</h3>
+                            <p class="about-wrap-text">Рассматриваем разные частные случаи и в каждом стараемся сдалеть продажу
+                                автомобиля удобной для нашего клиента.</p>
+                        </div>
+                    </li>
+                    <li class="about-list-item"><img class="about-img" src="./images/checkmat.svg" alt="checkmat-img" width="30px"
+                            height="30px">
+                        <div class="about-wrap">
+                            <h3 class="about-wrap-title">Деньги за авто
+                                в течение дня</h3>
+                            <p class="about-wrap-text">Процесс продажи вашего автомобиля состaвит не более 24 часов.</p>
+                        </div>
+                    </li>
+                    <li class="about-list-item"><img class="about-img" src="./images/checkmat.svg" alt="checkmat-img" width="30px"
+                            height="30px">
+                        <div class="about-wrap">
+                            <h3 class="about-wrap-title">Юридическая и
+                                финансовая безопасность</h3>
+                            <p class="about-wrap-text">Обеспечиваем полную прозрачность и безопасность сделки.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="what-section"><div class="what-container container">
+            <div class="what-list-div">
+            
+                <ul class="what-list list">
+                    <li class="what-list-item">
+                        <h3 class="what-section-tile">В хорошем состоянии</h3>
+                        
+                        <div class="image-container-what"><img src="./images/goodcar.png" alt="normal car"
+                                class="image-animation-what"><img src="./images/wheel.png" alt="wheel rotare"
+                                class="image-wheel-rotare"></div>
+                                <p class="what-list-text">Машины которые внешне и внутренне в нормальном состоянии и на ходу.</p>
+            
+                    </li>
+                    <li class="what-list-item">
+                        <h3 class="what-section-tile">Неисправные авто</h3>
+                        
+                        <div class="image-container-what"><img src="./images/damagecar.png" alt="damages car"
+                                class="image-animation-what"><img src="./images/wheel.png" alt="wheel rotare"
+                                class="image-wheel-rotare"></div>
+                                <p class="what-list-text">На ходу, но имеющие дефекты по кузову или технической части. </p>
+                    </li>
+                    <li class="what-list-item">
+                        <h3 class="what-section-tile">Аварийные авто</h3>
+                        
+                        <div class="image-container-what"><img src="./images/crashcar2.png" alt="car after crash"
+                                class="image-animation-what"><img src="./images/wheel.png" alt="wheel rotare"
+                                class="image-wheel-rotare"></div>
+                                <p class="what-list-text">Автомобили после серьезных дорожно-транспортных происшествий (после ДТП).</p>
+                    </li>
+                </ul>
+                <div></div>
+                <!-- <img src="./images/wheel.png" alt="wheel rotare" class="image-wheel-rotare"> -->
+            </div>
+
+        </div></section>
+        <section class="step-section">
+            <div class="step-container container">
+                <h2 class="step-section-title">Этапы совершения сделки</h2>
+                <p class="step-section-text">Все несколько простых шагов для продажи Вашего автомобиля.</p>
+                <div class="swipe-step-div">
+                    <button id="prevButton" class="step-btn prev-step-btn"><svg class="icon-step-btn" width="18px" height="18px"
+                            alt="icon-swipe-left">
+                            <use href="./images/icons.svg#icon-left_arrow"></use>
+                        </svg></button>
+                    <button id="nextButton" class="step-btn next-step-btn"><svg class="icon-step-btn" width="18px" height="18px"
+                            alt="icon-swipe-right">
+                            <use href="./images/icons.svg#icon-right_arrow"></use>
+                        </svg></button>
+                    <ul class="step-list list">
+                        <li class="step-list-item">
+                            <div class="step-list-wrap">
+                                <h3 class="step-list-title">Контакт с нами</h3>
+                                <p class="step-list-text">Предварительно связываемся с вами по телефону, уточняем
+                                    предварительные
+                                    нюансы и
+                                    назначем время и место встречи.</p>
+                                <p class="step-list-time">~ 5 минут</p>
+                            </div>
+                            <div class="step-list-item-bg-image"><img class="step-list-img" src="/images/first-slide.png"
+                                    alt="phone-calling"></div>
+                        </li>
+                        <li class="step-list-item">
+                            <div class="step-list-wrap">
+                                <h3 class="step-list-title">Осмотр автомоблия</h3>
+                                <p class="step-list-text">Встречаемся с вами. Проводим осмотр Вашего автомобиля.</p>
+                                <p class="step-list-time">~ 10 - 30 минут</p>
+                            </div>
+                            <div class="step-list-item-bg-image">
+                                <img class="step-list-img" src="/images/second-slide.png" alt="two-mans-with-car">
+                            </div>
+                        </li>
+                        <li class="step-list-item">
+                            <div class="step-list-wrap">
+                                <h3 class="step-list-title">
+                                    Получаем деньги</h3>
+                                <p class="step-list-text">После согласования цены Вашего автомобиля, оформелния всех документов,
+                                    получаем
+                                    деньги.</p>
+                                <p class="step-list-time">~ 10 - 60 минут</p>
+                        
+                </div>
+                <div class="step-list-item-bg-image"><img class="step-list-img" src="/images/third-slide.png" alt="money-usd">
+                </div></li>
+                </ul>
+               
+            </div>
+            </div>
+        </section>
+        <section class="documents-rating-section">
+            <div class="documents-rating-container container">
+                <div class="documents-rating-wrap">
+                    <h2 class="documents-rating-title">Оценка авто онлайн</h2>
+                    <p class="documents-rating-text">Заполните информацию об автомобиле и получите ответ по цене как можно скорее.</p>
+                    <form class="documents-rating-form " id="myForm">
+                    <label class="form-label" for="makes">
+                        <span class="input-label-span">Марка</span>
+                        <span class="input-wrap">
+                            <input type="text" placeholder="Укажите марку авто" name="makes" class="documents-rating-input makes" id="makes"
+                                list="makesList" required>
+                            <datalist id="makesList"></datalist>
+                        </span>
+                    </label>
+                
+                    <label class="form-label" for="model">
+                        <span class="input-label-span">Модель</span>
+                        <span class="input-wrap">
+                            <input type="text" placeholder="Укажите модель" name="model" class="documents-rating-input model" id="model" list="modelList"
+                                required>
+                            <datalist id="modelList"></datalist>
+                        </span>
+                    </label>
+                
+                    <label class="form-label" for="year">
+                        <span class="input-label-span">Год</span>
+                        <span class="input-wrap">
+                            <select name="year" class="documents-rating-input year" id="year">
+                                <option value="">Выберите год</option>
+                            </select>
+                        </span>
+                    </label>
+                    <!-- <label class="form-label" for="year">
+                            <span class="input-label-span">Год</span>
+                            <span class="input-wrap">
+                                <select name="year" class="hero-input" id="year">
+                                    <option  value="">Выберите год</option>
+                                </select>
+                            </span>
+                        </label> -->
+                
+                    <label class="form-label" for="price">
+                        <span class="input-label-span">Желаемая цена</span>
+                        <span class="input-wrap">
+                            <input type="text" placeholder="Укажите желаемую цену" name="price" class="documents-rating-input price" id="price">
+                        </span>
+                    </label>
+                
+                    <label class="form-label" for="name">
+                        <span class="input-label-span">Введите имя</span>
+                        <span class="input-wrap">
+                            <input type="text" placeholder="Введите ваше имя" name="name" class="documents-rating-input name" id="name" required>
+                        </span>
+                    </label>
+                
+                    <label class="form-label" for="number">
+                        <span class="input-label-span">Введите номер</span>
+                        <span class="input-wrap">
+                            <input type="text" placeholder="Введите ваш номер" name="number" class="documents-rating-input number-mask number" id="number" required>
+                        </span>
+                    </label>
+                
+                    <button class="rating-submit-btn form-submit-btn" type="submit">Оценить авто</button>
+                </form></div>
+                <div class="documents-enumeration">
+                    <h2 class="documents-rating-title">Что необходимо для купли-продажи?</h2>
+                    <p class="documents-rating-text">При отсутствии каких-либо документов перечисленных в списке, свяжитесь с нами, для уточнения возможности сделки.</p>
+                    <ul class="documents-enumeration-list list">
+                        <li class="documents-enumeration-item"><img class="documents-enumeration-img" src="./images/checkmat.svg" alt="checkmat-img" width="20px" height="20px">
+                            <p class="documents-enumeration-text">Техпаспорт автомобиля</p>
+                        </li>
+                        <li class="documents-enumeration-item"><img class="documents-enumeration-img" src="./images/checkmat.svg" alt="checkmat-img" width="20px" height="20px">
+                            <p class="documents-enumeration-text">Удостоверение личности <span class="documents-enumeration-text-span">(паспорт или ID-карта)</span></p>
+                        </li>
+                        <li class="documents-enumeration-item"><img class="documents-enumeration-img" src="./images/checkmat.svg" alt="checkmat-img" width="20px" height="20px">
+                            <p class="documents-enumeration-text">ИНН <span class="documents-enumeration-text-span">(Идентификационный номер налогоплательщика)</span></p>
+                        </li>
+                        <li class="documents-enumeration-item"><img class="documents-enumeration-img" src="./images/checkmat.svg" alt="checkmat-img" width="20px" height="20px">
+                            <p class="documents-enumeration-text">Генеральная доверенность <span class="documents-enumeration-text-span">(Если вы не собственник)</span></p>
+                        </li>
+                        <li class="documents-enumeration-item"><img class="documents-enumeration-img" src="./images/checkmat.svg" alt="checkmat-img" width="20px" height="20px">
+                            <p class="documents-enumeration-text">Документы о сервисном обслуживании <span class="documents-enumeration-text-span">(если есть)</span></p>
+                        </li>
+                        <li class="documents-enumeration-item"><img class="documents-enumeration-img" src="./images/checkmat.svg" alt="checkmat-img" width="20px" height="20px">
+                            <p class="documents-enumeration-text">Комплект ключей</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="cars-logo-section">
+            <div class="cars-logo-container container">
+                <h2>Выкупаем автомобили любой марки
+                </h2>
+                <div class="cars-logos-scroll">
+                <ul class="cars-logo-list list" id="scrollingList">
+                    <li class="cars-logo-item">
+                        <img class="cars-logo-img" src="./images/car-logos/bmw-logo.png" alt="logo-bmw" width="" height="">
+                
+                    </li>
+                    <li class="cars-logo-item">
+                        <img class="cars-logo-img" src="./images/car-logos/citroen-logo.png" alt="logo-citroen" width="" height="">
+                
+                    </li>
+                    <!-- <li class="cars-logo-item">
+                        <img class="cars-logo-img" src="./images/car-logos/fiat-logo.png" alt="logo-fiat" width="" height="">
+                
+                    </li> -->
+                    <li class="cars-logo-item">
+                        <img class="cars-logo-img" src="./images/car-logos/ford-logo.png" alt="logo-ford" width="" height="">
+                
+                    </li>
+                    <li class="cars-logo-item">
+                        <img class="cars-logo-img" src="./images/car-logos/honda-logo.png" alt="logo-honda" width="" height="">
+                
+                    </li>
+                    <li class="cars-logo-item">
+                        <img class="cars-logo-img" src="./images/car-logos/hyundai-logo.png" alt="logo-hyundai" width="" height="">
+                
+                    </li>
+                    <li class="cars-logo-item">
+                        <img class="cars-logo-img" src="./images/car-logos/infiniti-logo.png" alt="logo-infinity" width="" height="">
+                
+                    </li>
+                    <li class="cars-logo-item">
+                        <img class="cars-logo-img" src="./images/car-logos/kia-logo.png" alt="logo-kia" width="" height="">
+                
+                    </li>
+                    <li class="cars-logo-item">
+                        <img class="cars-logo-img" src="./images/car-logos/land-rover-logo.png" alt="logo-land-rover" width="" height="">
+                
+                    </li>
+                    <li class="cars-logo-item">
+                        <img class="cars-logo-img" src="./images/car-logos/lexus-logo.png" alt="logo-lexus" width="" height="">
+                
+                    </li>
+                    <li class="cars-logo-item">
+                        <img class="cars-logo-img" src="./images/car-logos/mazda-logo.png" alt="logo-mazda" width="" height="">
+                
+                    </li>
+                    <li class="cars-logo-item">
+                        <img class="cars-logo-img" src="./images/car-logos/mercedes-benz-logo.png" alt="logo-mercedes-benz" width="" height="">
+                
+                    </li>
+                    <li class="cars-logo-item">
+                        <img class="cars-logo-img" src="./images/car-logos/mitsubishi-logo.png" alt="logo-mitsubishi" width="" height="">
+                
+                    </li>
+                    <li class="cars-logo-item">
+                        <img class="cars-logo-img" src="./images/car-logos/nissan-logo.png" alt="logo-nissan" width="" height="">
+                
+                    </li>
+                    <li class="cars-logo-item">
+                        <img class="cars-logo-img" src="./images/car-logos/opel-logo.png" alt="logo-opel" width="" height="">
+                
+                    </li>
+                    <li class="cars-logo-item">
+                        <img class="cars-logo-img" src="./images/car-logos/peugeot-logo.png" alt="logo-peugeot" width="" height="">
+                
+                    </li>
+                    <li class="cars-logo-item">
+                        <img class="cars-logo-img" src="./images/car-logos/porsche-logo.png" alt="logo-porsche" width="" height="">
+                
+                    </li>
+                    <li class="cars-logo-item">
+                        <img class="cars-logo-img" src="./images/car-logos/renault-logo.png" alt="logo-renault" width="" height="">
+                
+                    </li>
+                    <li class="cars-logo-item">
+                        <img class="cars-logo-img" src="./images/car-logos/suzuki-logo.png" alt="logo-suzuki" width="" height="">
+                    
+                    </li>
+                    <li class="cars-logo-item">
+                        <img class="cars-logo-img" src="./images/car-logos/toyota-logo.png" alt="logo-toyota" width="" height="">
+                    
+                    </li>
+                    <li class="cars-logo-item">
+                        <img class="cars-logo-img" src="./images/car-logos/volkswagen-logo.png" alt="logo-volkswagen" width="" height="">
+                    
+                    </li>
+                    <li class="cars-logo-item">
+                        <img class="cars-logo-img" src="./images/car-logos/volvo-logo.png" alt="logo-volvo" width="" height="">
+                    
+                    </li>
+                </ul>
+                
+                
+
+                </div>
+                
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="footer-container container">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <span class="shock-logo">Shock</span><span class="auto-logo">Auto</span></span>
+                    </div>
+                  <p class="footer-text">Вся предоставленная информация на сайте не является публичной офертой и носит исключительно информативный характер. По
+                всем вопросам и предложениям обращаться по телефону.</p>
+                </div>
+                <div class="footer-contacts">
+                    <h3 class="footer-titile">Наши контакты</h3>
+                    <ul class="footer-list-contacts list">
+                        <li class="footer-list-item">
+                        <a class="footer-link header-tel link" href="tel:+380986952105">
+                            <svg class="phone-icon footer-icon" width="15px" height="15px">
+                                <use href="./images/icons.svg#icon-phone"></use>
+                            </svg>
+                            <span class="footer-link-span">(098) 695-21-05</span>
+                        </a>
+                        </li>
+                        </a>
+                        <li class="footer-list-item"><a class="footer-link viber" href="viber://chat?number=<+380979097544>">
+                            <svg class="footer-icon" width="15px" height="15px">
+                                <use href="./images/icons.svg#icon-viber"></use>
+                            </svg><span class="footer-link-span">Viber</span></a></li>
+                    </ul>
+                    <p class="footer-text">Выкуп авто Украина Днепр © 2023</p>
+                </div>
+            </div>
+        </footer>
+        <div></div>
+    </main>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://unpkg.com/imask"></script>
+<script type="module" src="./js/form.js"></script>
+<!-- Modal -->
+<div class="modal-overlay" id="modalOverlay">
+    <div class="modal-window" id="modalWindow">
+        <div class="modal-header"><h2 class="modal-window-title">Хотите узнать стоимость автомобиля?</h2>
+        <button class="close-btn modal-close-btn" id="closeModal"><svg class="svg-close-modal" width="10px" height="10px">
+                <use href="./images/icons.svg#icon-close-btn-modal"></use>
+            </svg></button></div>
+            <div class="modal-body">
+        <p class="modal-window-text">Оставьте контактные данные <br> и мы позвоним как только увидим Вашу заявку.</p>
+        <form class="modal-window-form">
+            <label class="modal-window-form-label" for="name">
+                <span class="input-label-span">Введите имя</span>
+                        <span class="input-wrap">
+                            <input type="text" placeholder="Введите ваше имя" name="name" class="modal-input name"
+                                id="name" required>
+                        </span>
+            </label>
+
+            <label class="modal-window-form-label" for="number">
+                <span class="input-label-span">Введите номер <span class="red-required"><span></span>
+                        <span class="input-wrap">
+                            <input type="text" placeholder="Введите ваш номер" name="number"
+                                class="modal-input number-mask number" id="number" required>
+                        </span>
+            </label>
+            <button class="modal-submit-btn form-submit-btn" type="submit">Отправить</button>
+        </form>
+        </div>
+        
+    </div>
+</div>
+<!-- Alret -->
+<div id="overlay" class="overlay"></div>
+<div id="customAlert" class="custom-alert">
+    <div class="custom-alert-content">
+        <span class="custom-alert-icon">&#10004;</span>
+        <span class="custom-alert-message">Ваш запрос удачно отправлен, мы скоро вам перезвоним.</span>
+        <button id="closeAlert" class="custom-alert-close-button">Закрыть</button>
+    </div>
+</div>
+<!-- Alert -->
+</div>
+</body>
+
+</html>
