@@ -691,14 +691,26 @@ transition: transform 0.7s ease;}
 /* .step-list-item-test {background: url('../images/slide1.png') center center no-repeat;
     background-size: cover;
 } */
+.step-list-item:nth-child(1) .background-image {
+    background: url('../images/slide1.png') center center no-repeat;
+    background-size: cover;
+}
+
+.step-list-item:nth-child(2) .background-image {
+    background: url('../images/slide2.png') center center no-repeat;
+    background-size: cover;
+}
+
+.step-list-item:nth-child(3) .background-image {
+    background: url('../images/slide3.png') center center no-repeat;
+background-size: cover;}
 .background-image {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('../images/slide1.png') center center no-repeat;
-    background-size: cover;
+    
     opacity: 0.5;
     /* Прозрачность только для изображения */
     z-index: -1;
