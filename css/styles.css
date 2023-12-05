@@ -680,12 +680,30 @@ transition: transform 0.7s ease;}
 .step-list-item {
     position: relative;
     overflow: hidden;
+
     
     color: #FFF;
     transition: opacity 1.5s ease;
     /* Анимируем opacity и высоту */
     opacity: 0;
 }
+
+/* .step-list-item-test {background: url('../images/slide1.png') center center no-repeat;
+    background-size: cover;
+} */
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/slide1.png') center center no-repeat;
+    background-size: cover;
+    opacity: 0.5;
+    /* Прозрачность только для изображения */
+    z-index: -1;
+}
+
 
 .step-list-item:first-child {
     opacity: 1;
@@ -1138,3 +1156,5 @@ font-weight: 500;}
 .modal-close-btn {}
 
 .svg-close-modal {}
+
+
