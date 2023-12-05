@@ -282,13 +282,20 @@ margin: 0 15px;}
 } */
 
 .hero-section {
-background: linear-gradient(200deg, rgb(30 66 90 / 90%) 50%, #000000);
-    height: 600px;;
+/* background: linear-gradient(200deg, rgb(30 66 90 / 90%) 50%, #000000); */
+    
     position: relative;
     transition: .75s ease-in;
-margin-bottom: 270px;
+margin-bottom: 60px;
+overflow: hidden;
 
     }
+.bg-hero {background: linear-gradient(200deg, rgb(30 66 90 / 90%) 50%, #000000);
+position: absolute;
+height: 300px;
+/* top: 30px; */
+width: 100%;
+height: 850px;}
 /* .hero-container {
     background: linear-gradient(200deg, rgb(30 66 90 / 90%) 50%, #000000);
     background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/buy-car2.png);
@@ -384,6 +391,7 @@ padding: 20px;
 border-radius: 5px;
 z-index: 0;
 transition: .75s ease-in;
+margin-bottom: 30px;
 }
 .hero-form-row {display: flex;
 flex-direction: column;}

@@ -105,7 +105,7 @@ padding-bottom: 60px;}
         .header-container {
             height: 70px;
         }
-    .hero-container {height: 400px;
+    /* .hero-container {height: 400px; */
     }
     .hero-section {
             margin-bottom: 80px;
@@ -217,8 +217,8 @@ flex-wrap: wrap;}
     .image-container {left: 50%;
         top: 100px;}
     .image-container img {max-width: none;}
-    .hero-section {height: 500px;
-    margin-bottom: 300px;}
+    /* .hero-section {height: 500px;
+    margin-bottom: 300px;} */
     .image-form-window {display: block;}
     .hero-form-window-text {width: 205px;}
     .window-form-title {font-size: 34px;
