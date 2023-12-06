@@ -515,7 +515,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // _________________________________База данных ___________________________________
-const filePath = './cars.json';
+const filePath = '/js/cars.json';
 const manufacturerSelect = document.getElementById('makes');
 const modelSelect = document.getElementById('model');
 const yearSelect = document.getElementById('year');
@@ -528,7 +528,12 @@ const allowedManufacturers = ['Audi', 'BMW', 'Buick', 'Cadillac', 'Chevrolet', '
   'Skoda', 'Smart', 'Subaru', 'Suzuki', 'Tesla', 'Toyota', 'Volkswagen', 'Volvo', 'Lada (ВАЗ)', 'ЗАЗ'];
 
 fetch(filePath)
-  .then(response => response.json())
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`Ошибка HTTP: ${response.status}`);
+    }
+    return response.json();
+  })
   .then(jsonData => {
     // Фильтруем только разрешенные производители
     const filteredManufacturers = jsonData.filter(manufacturer => allowedManufacturers.includes(manufacturer.name));
@@ -577,10 +582,10 @@ fetch(filePath)
       }
     });
   })
-.catch(error => {
-  console.error('Произошла ошибка при загрузке файла:', error);
-  console.log('Полный ответ:', error.response); // Вместо "response" используйте свойство, которое содержит ответ
-});
+  .catch(error => {
+    console.error('Произошла ошибка при загрузке файла:', error);
+    console.log('Полный ответ:', error.response); // Вместо "response" используйте свойство, которое содержит ответ
+  });
     //  const filePath = '/cars.json';
     // const manufacturerSelect = document.getElementById('manufacturer');
     // const modelSelect = document.getElementById('model');
