@@ -331,16 +331,16 @@ showCurrentStep();
 //     var mask = IMask(numberInput, maskOptions);
 // });
 // ________________________________________Выбор года Select _____________________________________________
-var selectYears = document.querySelectorAll('.year');
+// var selectYears = document.querySelectorAll('.year');
 
-selectYears.forEach(function(selectYear) {
-    for (var year = 1990; year <= 2024; year++) {
-        var option = document.createElement('option');
-        option.value = year;
-        option.text = year;
-        selectYear.add(option);
-    }
-});
+// selectYears.forEach(function(selectYear) {
+//     for (var year = 1990; year <= 2024; year++) {
+//         var option = document.createElement('option');
+//         option.value = year;
+//         option.text = year;
+//         selectYear.add(option);
+//     }
+// });
   
 
 
@@ -514,5 +514,120 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// _________________________________База данных ___________________________________
+const filePath = '/cars.json';
+const manufacturerSelect = document.getElementById('makes');
+const modelSelect = document.getElementById('model');
+const yearSelect = document.getElementById('year');
 
+// Список разрешенных производителей
+const allowedManufacturers = ['Audi', 'BMW', 'Buick', 'Cadillac', 'Chevrolet', 'Chrysler', 'Citroën', 'Dacia', 'Daewoo',
+  'Dodge', 'Fiat', 'Ford', 'GMC', 'Honda', 'Hyundai', 'Infiniti', 'Isuzu', 'Jaguar', 'Jeep',
+  'Kia', 'Lada', 'Land Rover', 'Lexus', 'Lincoln', 'Maserati', 'Mazda', 'Mercedes-Benz',
+  'Mitsubishi', 'Nissan', 'Opel', 'Peugeot', 'Porsche', 'Renault', 'Rolls-Royce', 'Seat',
+  'Skoda', 'Smart', 'Subaru', 'Suzuki', 'Tesla', 'Toyota', 'Volkswagen', 'Volvo', 'Lada (ВАЗ)', 'ЗАЗ'];
 
+fetch(filePath)
+  .then(response => response.json())
+  .then(jsonData => {
+    // Фильтруем только разрешенные производители
+    const filteredManufacturers = jsonData.filter(manufacturer => allowedManufacturers.includes(manufacturer.name));
+
+    // Заполняем список производителей
+    filteredManufacturers.forEach(manufacturer => {
+      const option = document.createElement('option');
+      option.value = manufacturer.name;
+      option.textContent = manufacturer.name;
+      manufacturerSelect.appendChild(option);
+    });
+
+    // Обработчик события для изменения производителя
+    manufacturerSelect.addEventListener('change', () => {
+      const selectedManufacturer = manufacturerSelect.value;
+      const selectedManufacturerData = jsonData.find(item => item.name === selectedManufacturer);
+
+      // Очищаем и заполняем список моделей
+      modelSelect.innerHTML = '';
+      selectedManufacturerData.models.forEach(model => {
+        const option = document.createElement('option');
+        option.value = model.name;
+        option.textContent = model.name;
+        modelSelect.appendChild(option);
+      });
+
+      // Очищаем и заполняем список годов выпуска
+      yearSelect.innerHTML = '';
+      for (let year = 1990; year <= 2024; year++) {
+        const option = document.createElement('option');
+        option.value = year;
+        option.textContent = year;
+        yearSelect.appendChild(option);
+      }
+    });
+
+    // Обработчик события для изменения модели
+    modelSelect.addEventListener('change', () => {
+      // Очищаем и заполняем список годов выпуска "от" и "до"
+      yearSelect.innerHTML = '';
+      for (let year = 1990; year <= 2024; year++) {
+        const option = document.createElement('option');
+        option.value = year;
+        option.textContent = year;
+        yearSelect.appendChild(option);
+      }
+    });
+  })
+  .catch(error => console.error('Произошла ошибка при загрузке файла:', error));
+    //  const filePath = '/cars.json';
+    // const manufacturerSelect = document.getElementById('manufacturer');
+    // const modelSelect = document.getElementById('model');
+    // const yearSelect = document.getElementById('year');
+
+    // fetch(filePath)
+    //   .then(response => response.json())
+    //   .then(jsonData => {
+    //     // Заполняем список производителей
+    //     jsonData.forEach(manufacturer => {
+    //       const option = document.createElement('option');
+    //       option.value = manufacturer.name;
+    //       option.textContent = manufacturer.name;
+    //       manufacturerSelect.appendChild(option);
+    //     });
+
+    //     // Обработчик события для изменения производителя
+    //     manufacturerSelect.addEventListener('change', () => {
+    //       const selectedManufacturer = manufacturerSelect.value;
+    //       const selectedManufacturerData = jsonData.find(item => item.name === selectedManufacturer);
+
+    //       // Очищаем и заполняем список моделей
+    //       modelSelect.innerHTML = '';
+    //       selectedManufacturerData.models.forEach(model => {
+    //         const option = document.createElement('option');
+    //         option.value = model.name;
+    //         option.textContent = model.name;
+    //         modelSelect.appendChild(option);
+    //       });
+
+    //       // Очищаем и заполняем список годов выпуска
+    //       yearSelect.innerHTML = '';
+    //       for (let year = 1990; year <= 2024; year++) {
+    //         const option = document.createElement('option');
+    //         option.value = year;
+    //         option.textContent = year;
+    //         yearSelect.appendChild(option);
+    //       }
+    //     });
+
+    //     // Обработчик события для изменения модели
+    //     modelSelect.addEventListener('change', () => {
+    //       // Очищаем и заполняем список годов выпуска "от" и "до"
+    //       yearSelect.innerHTML = '';
+    //       for (let year = 1990; year <= 2024; year++) {
+    //         const option = document.createElement('option');
+    //         option.value = year;
+    //         option.textContent = year;
+    //         yearSelect.appendChild(option);
+    //       }
+    //     });
+    //   })
+    //   .catch(error => console.error('Произошла ошибка при загрузке файла:', error));

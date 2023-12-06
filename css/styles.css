@@ -427,19 +427,19 @@ display: block;
     width: 100%;
     padding-left: 15px;
 color: #ffffffad;}
-.hero-input:hover,
+/* .hero-input:hover,
 .hero-input:focus {
-    border: 2px solid #007a00c4;
+    border: 2px solid rgba(0, 53, 122, 0.769);
     color: var(--primary-footer-text-color);
-}
+} */
 
-.hero-input:invalid:focus,
+/* .hero-input:invalid:focus,
 .number:invalid:focus {
     outline: none;
  
     border: 2px solid #ff0000a9;
 
-}
+} */
 
 .hero-input option {
     background-color: rgba(63, 63, 63, 1);
@@ -899,6 +899,12 @@ font-size: 14px;}
         width: 100%;
         white-space: nowrap;
         transition: box-shadow 0.4s, transform 0.4s;margin-top: 10px;}
+.rating-submit-btn:hover,
+.rating-submit-btn:focus {
+    background-color: rgb(0, 153, 255);
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    transform: scale(1.02);
+}
 
 .documents-enumeration {}
 .documents-enumeration-list {display: flex;
