@@ -577,7 +577,10 @@ fetch(filePath)
       }
     });
   })
-  .catch(error => console.error('Произошла ошибка при загрузке файла:', error));
+.catch(error => {
+  console.error('Произошла ошибка при загрузке файла:', error);
+  console.log('Полный ответ:', error.response); // Вместо "response" используйте свойство, которое содержит ответ
+});
     //  const filePath = '/cars.json';
     // const manufacturerSelect = document.getElementById('manufacturer');
     // const modelSelect = document.getElementById('model');
