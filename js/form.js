@@ -515,7 +515,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // _________________________________База данных ___________________________________
-const filePath = '/js/cars.json';
+const filePath = './js/cars.json';
 const manufacturerSelect = document.getElementById('makes');
 const modelSelect = document.getElementById('model');
 const yearSelect = document.getElementById('year');
