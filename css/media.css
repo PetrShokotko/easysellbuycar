@@ -106,7 +106,7 @@ padding-bottom: 60px;}
             height: 70px;
         }
     /* .hero-container {height: 400px; */
-    }
+        
     .hero-section {
             margin-bottom: 80px;
         }
@@ -157,7 +157,7 @@ flex-wrap: wrap;}
     background: url('../images/slide3.png') right top no-repeat;
     background-size: 70%;
 }
-}
+
 
 @media (min-width: 991.98px) {
     .container {
