@@ -56,6 +56,7 @@
             left: 336.5px;
         }
         .header-container .logo-company{display: flex;}
+        .modal-window {width: 430px;}
 
 
 }
@@ -157,6 +158,7 @@ flex-wrap: wrap;}
 .step-list-item:nth-child(3) .background-image {
     background: url('../images/slide3.png') right top no-repeat;
     background-size: 70%;
+}
 }
 
 
