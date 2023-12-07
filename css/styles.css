@@ -1061,6 +1061,7 @@ opacity: 0.8;}
 
 .footer-list-contacts {display: flex;
     flex-direction: column;
+    gap: 5px;
     }
 
 .list {}
@@ -1069,7 +1070,9 @@ opacity: 0.8;}
 
 .footer-link {align-items: center;
     display: flex;
-gap: 10px;}
+gap: 10px;
+text-decoration: none;
+}
 
 .footer-link-span{font-size: 13px;}
 
@@ -1214,4 +1217,5 @@ height: 30px;
         letter-spacing: 0.2em;
 font-weight: bold;}
 
-.header-container .logo-company {color: #fff;}
+.header-container .logo-company {color: #fff;
+display: none;}
