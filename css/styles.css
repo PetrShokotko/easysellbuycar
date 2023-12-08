@@ -295,7 +295,7 @@ position: absolute;
 height: 300px;
 /* top: 30px; */
 width: 100%;
-height: 850px;}
+height: 75%;}
 /* .hero-container {
     background: linear-gradient(200deg, rgb(30 66 90 / 90%) 50%, #000000);
     background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/buy-car2.png);
@@ -318,10 +318,21 @@ height: 850px;}
 }
      */
 .hero-row {position: relative;}
+.hero-image {width: 280px;
+    bottom: -20px;
+    right: 0;
+    z-index: -10;
+    right: 0;
+    opacity: 0.6;
+    position: absolute;}
 .hero-title {}
 
 .hero-title {
-        font-size: 42px;
+    font-family: "Raleway";
+        font-weight: 900;
+        line-height: 0.8;
+        font-size: 45px;
+    
         /* text-shadow: 0 5px 20px rgba(255, 255, 255, 0.5), 0 0 5px rgba(255, 255, 255, 0.5); */
     }
 .hero-title-wrap {
@@ -342,11 +353,12 @@ height: 850px;}
     top: 50px;
     opacity: 0.6;
 
-    z-index: 1;
+    z-index: 0;
 }
 
 .image-animation {
     position: absolute;
+        width: 100%;
     top: 0;
     left: 0;
     opacity: 0;
@@ -404,7 +416,7 @@ margin-bottom: 12px;
     color: #fff;}
 .image-form-window {display: none;
 width: 200px;}
-.hero-title-location {
+.hero-title-location {display: none;
 }
 .window-form-text2 {color: #FFF;}
 .hero-form {display: flex;;
