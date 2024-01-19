@@ -147,10 +147,12 @@
 //     form.addEventListener("submit", handleFormSubmit);
 // });
 // _________________________________________кода для отправки с телеграм________________________
-var botToken = '6145167660:AAHLs8Xk0BcZAVb3m9jS5DqLiiY7nVK_ULg';
 
-// Используйте '457491401' в качестве chat ID
-var chatId = '457491401';
+import config from './config.js';
+
+// Доступ к значениям
+const botToken = config.botToken;
+const chatId = config.chatId;
 
 // Функция для обработки отправки формы
 function handleFormSubmit(event) {
