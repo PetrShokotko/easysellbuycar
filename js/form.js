@@ -146,6 +146,13 @@
 // forms.forEach(function (form) {
 //     form.addEventListener("submit", handleFormSubmit);
 // });
+// _________________________________________кода для отправки с телеграм________________________
+var botToken = '6145167660:AAHLs8Xk0BcZAVb3m9jS5DqLiiY7nVK_ULg';
+
+// Используйте '457491401' в качестве chat ID
+var chatId = '457491401';
+
+// Функция для обработки отправки формы
 function handleFormSubmit(event) {
     event.preventDefault(); // Предотвращение стандартной отправки формы
 
@@ -180,10 +187,41 @@ function handleFormSubmit(event) {
     // Проверяем, что хотя бы одно поле заполнено
     if (nonEmptyFields.length > 0) {
         displayMessage(form, message);
+
+        // Отправляем сообщение в Telegram
+        sendTelegramMessage(message);
     }
 }
 
-// Вспомогательная функция для отображения сообщения
+// Вспомогательная функция для отправки сообщения в бот Telegram
+function sendTelegramMessage(message) {
+    // URL для отправки сообщения через Telegram Bot API
+    var apiUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
+
+    // Формируем параметры для запроса
+    var params = {
+        chat_id: chatId,
+        text: message,
+    };
+
+    // Преобразуем параметры в строку для добавления к URL
+    var queryString = Object.keys(params).map(key => key + '=' + encodeURIComponent(params[key])).join('&');
+
+    // Формируем полный URL
+    var fullUrl = `${apiUrl}?${queryString}`;
+
+    // Отправляем POST-запрос на API Telegram
+    fetch(fullUrl, { method: 'POST' })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Ответ от Telegram API:', data);
+        })
+        .catch(error => {
+            console.error('Ошибка отправки сообщения в Telegram:', error);
+        });
+}
+
+// Вспомогательная функция для отображения сообщения с оверлеем и алертом
 function displayMessage(form, message) {
     // Выводим сообщение в консоль
     console.log(message);
@@ -211,16 +249,11 @@ function displayMessage(form, message) {
         // Плавно устанавливаем прозрачность на 0 и фон на прозрачный
         document.getElementById("overlay").style.background = "rgba(0, 0, 0, 0)";
         document.getElementById("customAlert").style.opacity = 0;
-                document.getElementById("modalOverlay").style.background = "rgba(0, 0, 0, 0)";
-        
-        document.getElementById("modalWindow").style.opacity = 0;
 
         // Задержка перед скрытием
         setTimeout(function () {
             document.getElementById("overlay").style.display = "none";
             document.getElementById("customAlert").style.display = "none";
-            document.getElementById("modalOverlay").style.display = "none";
-            document.getElementById("modalWindow").style.display = "none";
         }, 500); // Добавляем задержку, чтобы закрытие было плавным
     }, 3000);
 }
@@ -246,6 +279,108 @@ var forms = document.querySelectorAll("form");
 forms.forEach(function (form) {
     form.addEventListener("submit", handleFormSubmit);
 });
+// __________________________________________Рабочий код формы__________________________________
+// function handleFormSubmit(event) {
+//     event.preventDefault(); // Предотвращение стандартной отправки формы
+
+//     // Получаем форму, на которой произошло событие
+//     var form = event.target;
+
+//     // Создаем объект для хранения данных
+//     var formData = {};
+
+//     // Собираем данные из полей формы и добавляем их в объект
+//     formData.makes = getValueByClass(form, ".makes");
+//     formData.model = getValueByClass(form, ".model");
+//     formData.year = getValueByClass(form, ".year");
+//     formData.price = getValueByClass(form, ".price");
+//     formData.name = getValueByClass(form, ".name");
+//     formData.number = getValueByClass(form, ".number");
+
+//     // Создаем массив для хранения непустых полей
+//     var nonEmptyFields = [];
+
+//     // Проверяем каждое поле и добавляем его в массив, если оно не пустое
+//     if (formData.makes) nonEmptyFields.push("Марка: " + formData.makes);
+//     if (formData.model) nonEmptyFields.push("Модель: " + formData.model);
+//     if (formData.year) nonEmptyFields.push("Год: " + formData.year);
+//     if (formData.price) nonEmptyFields.push("Желаемая цена: " + formData.price);
+//     if (formData.name) nonEmptyFields.push("Имя: " + formData.name);
+//     if (formData.number) nonEmptyFields.push("Номер: " + formData.number);
+
+//     // Формируем сообщение из непустых полей
+//     var message = nonEmptyFields.join("\n");
+
+//     // Проверяем, что хотя бы одно поле заполнено
+//     if (nonEmptyFields.length > 0) {
+//         displayMessage(form, message);
+//     }
+// }
+
+// // Вспомогательная функция для отображения сообщения
+// function displayMessage(form, message) {
+//     // Выводим сообщение в консоль
+//     console.log(message);
+
+//     // Очищаем поля ввода
+//     clearInputValue(form, ".makes");
+//     clearInputValue(form, ".model");
+//     clearInputValue(form, ".year");
+//     clearInputValue(form, ".price");
+//     clearInputValue(form, ".name");
+//     clearInputValue(form, ".number");
+
+//     // Показываем кастомное всплывающее окно
+//     document.getElementById("overlay").style.display = "block";
+//     document.getElementById("customAlert").style.display = "block";
+
+//     // Плавно устанавливаем прозрачность на 1 и фон на размытый
+//     setTimeout(function () {
+//         document.getElementById("overlay").style.background = "rgba(0, 0, 0, 0.5)";
+//         document.getElementById("customAlert").style.opacity = 1;
+//     }, 10); // Добавляем небольшую задержку
+
+//     // Автоматически закрываем кастомное всплывающее окно через 3 секунды
+//     setTimeout(function () {
+//         // Плавно устанавливаем прозрачность на 0 и фон на прозрачный
+//         document.getElementById("overlay").style.background = "rgba(0, 0, 0, 0)";
+//         document.getElementById("customAlert").style.opacity = 0;
+//                 document.getElementById("modalOverlay").style.background = "rgba(0, 0, 0, 0)";
+        
+//         document.getElementById("modalWindow").style.opacity = 0;
+
+//         // Задержка перед скрытием
+//         setTimeout(function () {
+//             document.getElementById("overlay").style.display = "none";
+//             document.getElementById("customAlert").style.display = "none";
+//             document.getElementById("modalOverlay").style.display = "none";
+//             document.getElementById("modalWindow").style.display = "none";
+//         }, 500); // Добавляем задержку, чтобы закрытие было плавным
+//     }, 3000);
+// }
+
+// // Вспомогательная функция для получения значения по классу с проверкой
+// function getValueByClass(form, className) {
+//     var element = form.querySelector(className);
+//     return element ? element.value : '';
+// }
+
+// // Вспомогательная функция для очистки значения поля ввода по классу
+// function clearInputValue(form, className) {
+//     var element = form.querySelector(className);
+//     if (element) {
+//         element.value = '';
+//     }
+// }
+
+// // Находим все формы на странице
+// var forms = document.querySelectorAll("form");
+
+// // Присваиваем обработчик каждой форме
+// forms.forEach(function (form) {
+//     form.addEventListener("submit", handleFormSubmit);
+// });
+// __________________________________________________________________________________________________
 
 //  ____________________________________ Открытия модального окна ___________________________________
 var openModalBtn = document.getElementById("openModal");
