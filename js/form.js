@@ -147,10 +147,9 @@
 //     form.addEventListener("submit", handleFormSubmit);
 // });
 // _________________________________________кода для отправки с телеграм________________________
-
-import config from './config.js';
-
 // Доступ к значениям
+import config from '/js/config.js';
+
 const botToken = config.botToken;
 const chatId = config.chatId;
 
