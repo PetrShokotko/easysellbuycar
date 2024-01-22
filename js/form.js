@@ -148,10 +148,8 @@
 // });
 // _________________________________________кода для отправки с телеграм________________________
 // Доступ к значениям
-import config from '/js/config.js';
-
-const botToken = config.botToken;
-const chatId = config.chatId;
+const botToken = '6145167660:AAHLs8Xk0BcZAVb3m9jS5DqLiiY7nVK_ULg';
+const chatId = '457491401';
 
 // Функция для обработки отправки формы
 function handleFormSubmit(event) {
