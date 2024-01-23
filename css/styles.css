@@ -103,7 +103,9 @@ img {
 
 /* Header */
 header {
+    
         position: fixed;
+        top: 0px;
             width: 100%;
             z-index: 100;
 background: radial-gradient(circle, rgba(51, 105, 147, .85) 0, #002248 100%);
