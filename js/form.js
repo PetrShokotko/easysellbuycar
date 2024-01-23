@@ -147,21 +147,21 @@
 //     form.addEventListener("submit", handleFormSubmit);
 // });
 // _________________________________________кода для отправки с телеграм________________________
-// Доступ к значениям
+
 const botToken = '6145167660:AAHLs8Xk0BcZAVb3m9jS5DqLiiY7nVK_ULg';
 const chatId = '457491401';
 
-// Функция для обработки отправки формы
-function handleFormSubmit(event) {
-    event.preventDefault(); // Предотвращение стандартной отправки формы
 
-    // Получаем форму, на которой произошло событие
+function handleFormSubmit(event) {
+    event.preventDefault(); 
+
+    
     var form = event.target;
 
-    // Создаем объект для хранения данных
+    
     var formData = {};
 
-    // Собираем данные из полей формы и добавляем их в объект
+    
     formData.makes = getValueByClass(form, ".makes");
     formData.model = getValueByClass(form, ".model");
     formData.year = getValueByClass(form, ".year");
@@ -169,10 +169,10 @@ function handleFormSubmit(event) {
     formData.name = getValueByClass(form, ".name");
     formData.number = getValueByClass(form, ".number");
 
-    // Создаем массив для хранения непустых полей
+    
     var nonEmptyFields = [];
 
-    // Проверяем каждое поле и добавляем его в массив, если оно не пустое
+    
     if (formData.makes) nonEmptyFields.push("Марка: " + formData.makes);
     if (formData.model) nonEmptyFields.push("Модель: " + formData.model);
     if (formData.year) nonEmptyFields.push("Год: " + formData.year);
@@ -180,36 +180,36 @@ function handleFormSubmit(event) {
     if (formData.name) nonEmptyFields.push("Имя: " + formData.name);
     if (formData.number) nonEmptyFields.push("Номер: " + formData.number);
 
-    // Формируем сообщение из непустых полей
+    
     var message = nonEmptyFields.join("\n");
 
-    // Проверяем, что хотя бы одно поле заполнено
+    
     if (nonEmptyFields.length > 0) {
         displayMessage(form, message);
 
-        // Отправляем сообщение в Telegram
+        
         sendTelegramMessage(message);
     }
 }
 
-// Вспомогательная функция для отправки сообщения в бот Telegram
+
 function sendTelegramMessage(message) {
-    // URL для отправки сообщения через Telegram Bot API
+    
     var apiUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
 
-    // Формируем параметры для запроса
+    
     var params = {
         chat_id: chatId,
         text: message,
     };
 
-    // Преобразуем параметры в строку для добавления к URL
+    
     var queryString = Object.keys(params).map(key => key + '=' + encodeURIComponent(params[key])).join('&');
 
-    // Формируем полный URL
+    
     var fullUrl = `${apiUrl}?${queryString}`;
 
-    // Отправляем POST-запрос на API Telegram
+    
     fetch(fullUrl, { method: 'POST' })
         .then(response => response.json())
         .then(data => {
@@ -220,12 +220,12 @@ function sendTelegramMessage(message) {
         });
 }
 
-// Вспомогательная функция для отображения сообщения с оверлеем и алертом
+
 function displayMessage(form, message) {
-    // Выводим сообщение в консоль
+    
     console.log(message);
 
-    // Очищаем поля ввода
+    
     clearInputValue(form, ".makes");
     clearInputValue(form, ".model");
     clearInputValue(form, ".year");
@@ -233,37 +233,37 @@ function displayMessage(form, message) {
     clearInputValue(form, ".name");
     clearInputValue(form, ".number");
 
-    // Показываем кастомное всплывающее окно
+    
     document.getElementById("overlay").style.display = "block";
     document.getElementById("customAlert").style.display = "block";
 
-    // Плавно устанавливаем прозрачность на 1 и фон на размытый
+    
     setTimeout(function () {
         document.getElementById("overlay").style.background = "rgba(0, 0, 0, 0.5)";
         document.getElementById("customAlert").style.opacity = 1;
-    }, 10); // Добавляем небольшую задержку
+    }, 10); 
 
-    // Автоматически закрываем кастомное всплывающее окно через 3 секунды
+    
     setTimeout(function () {
-        // Плавно устанавливаем прозрачность на 0 и фон на прозрачный
+        
         document.getElementById("overlay").style.background = "rgba(0, 0, 0, 0)";
         document.getElementById("customAlert").style.opacity = 0;
 
-        // Задержка перед скрытием
+        
         setTimeout(function () {
             document.getElementById("overlay").style.display = "none";
             document.getElementById("customAlert").style.display = "none";
-        }, 500); // Добавляем задержку, чтобы закрытие было плавным
+        }, 500); 
     }, 3000);
 }
 
-// Вспомогательная функция для получения значения по классу с проверкой
+
 function getValueByClass(form, className) {
     var element = form.querySelector(className);
     return element ? element.value : '';
 }
 
-// Вспомогательная функция для очистки значения поля ввода по классу
+
 function clearInputValue(form, className) {
     var element = form.querySelector(className);
     if (element) {
@@ -271,10 +271,10 @@ function clearInputValue(form, className) {
     }
 }
 
-// Находим все формы на странице
+
 var forms = document.querySelectorAll("form");
 
-// Присваиваем обработчик каждой форме
+
 forms.forEach(function (form) {
     form.addEventListener("submit", handleFormSubmit);
 });
@@ -419,32 +419,32 @@ const stepItems = document.querySelectorAll(".step-list-item");
 
 let currentIndex = 0;
 
-// Функция для отображения текущего элемента с анимацией
+
 function showCurrentStep() {
     stepItems.forEach((item, index) => {
         if (index === currentIndex) {
             item.style.opacity = 1;
-            item.style.height = "300px"; // Восстанавливаем высоту элемента
+            item.style.height = "300px"; 
         } else {
             item.style.opacity = 0;
-            item.style.height = "0"; // Устанавливаем нулевую высоту элемента
+            item.style.height = "0"; 
         }
     });
 }
 
-// Обработчик события для кнопки "Назад"
+
 prevButton.addEventListener("click", () => {
     currentIndex = (currentIndex - 1 + stepItems.length) % stepItems.length;
     showCurrentStep();
 });
 
-// Обработчик события для кнопки "Вперед"
+
 nextButton.addEventListener("click", () => {
     currentIndex = (currentIndex + 1) % stepItems.length;
     showCurrentStep();
 });
 
-// Вызов функции для отображения первого элемента при загрузке страницы
+
 showCurrentStep();
 
 
@@ -498,7 +498,7 @@ showCurrentStep();
 
 // __________________________________ Маска номера телефона и ее активация ________________________---
 document.addEventListener('DOMContentLoaded', function () {
-    // Выбираем все элементы с классом "number"
+    
     var numberInputs = document.getElementsByClassName('number');
     var masks = [];
 
@@ -507,17 +507,17 @@ document.addEventListener('DOMContentLoaded', function () {
         lazy: false
     };
 
-    // Добавляем слушатель события focus для каждого элемента
+    
     Array.from(numberInputs).forEach(function (numberInput) {
         numberInput.addEventListener('focus', function () {
-            // Проверяем, была ли уже применена маска к этому элементу
+
             if (!masks[numberInput.id]) {
                 masks[numberInput.id] = IMask(numberInput, maskOptions);
                 numberInput.setAttribute('placeholder', numberInput.getAttribute('data-mask-placeholder'));
             }
         });
 
-        // Добавляем слушатель разфокуса для каждого элемента
+        
         numberInput.addEventListener('blur', function () {
             if (masks[numberInput.id]) {
                 masks[numberInput.id].destroy();
@@ -612,7 +612,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // });
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Функция, которую можно повторно использовать для применения маски
+    
     function applyMaskToInput(input) {
         var maskOptions = {
             mask: '$ num',
@@ -641,7 +641,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Найти и применить маску ко всем элементам с классом "price"
     var priceInputs = document.querySelectorAll('.price');
     priceInputs.forEach(function (input) {
         applyMaskToInput(input);
@@ -656,7 +655,7 @@ const allowedManufacturers = ['Audi', 'BMW', 'Buick', 'Cadillac', 'Chevrolet', '
   'Mitsubishi', 'Nissan', 'Opel', 'Peugeot', 'Porsche', 'Renault', 'Rolls-Royce', 'Seat',
   'Skoda', 'Smart', 'Subaru', 'Suzuki', 'Tesla', 'Toyota', 'Volkswagen', 'Volvo', 'Lada (ВАЗ)', 'ЗАЗ'];
 
-// Функция для создания опции и добавления ее в выпадающий список
+
 function createAndAppendOption(selectElement, value, text) {
   const option = document.createElement('option');
   option.value = value;
@@ -664,10 +663,10 @@ function createAndAppendOption(selectElement, value, text) {
   selectElement.appendChild(option);
 }
 
-// Выбираем все элементы форм с классом '.car-form'
+
 const carForms = document.querySelectorAll('.car-form');
 
-// Загрузка данных из JSON-файла
+
 fetch(filePath)
   .then(response => {
     if (!response.ok) {
@@ -676,39 +675,39 @@ fetch(filePath)
     return response.json();
   })
   .then(jsonData => {
-    // Обработка каждой формы
+    
     carForms.forEach(carForm => {
-      // Получаем элементы формы
+      
       const manufacturerSelect = carForm.querySelector('.makes');
       const modelSelect = carForm.querySelector('.model');
       const yearSelect = carForm.querySelector('.year');
 
-      // Заполняем список производителей только теми, что в allowedManufacturers
+      
       allowedManufacturers.forEach(manufacturer => {
         createAndAppendOption(manufacturerSelect, manufacturer, manufacturer);
       });
 
-      // Обработчик события для изменения производителя
+      
       manufacturerSelect.addEventListener('change', () => {
         const selectedManufacturer = manufacturerSelect.value;
         const selectedManufacturerData = jsonData.find(item => item.name === selectedManufacturer);
 
-        // Очищаем и заполняем список моделей
+        
         modelSelect.innerHTML = '';
         selectedManufacturerData.models.forEach(model => {
           createAndAppendOption(modelSelect, model.name, model.name);
         });
 
-        // Очищаем и заполняем список годов выпуска
+        
         yearSelect.innerHTML = '';
         for (let year = 1990; year <= 2024; year++) {
           createAndAppendOption(yearSelect, year, year);
         }
       });
 
-      // Обработчик события для изменения модели
+      
       modelSelect.addEventListener('change', () => {
-        // Очищаем и заполняем список годов выпуска "от" и "до"
+        
         yearSelect.innerHTML = '';
         for (let year = 1990; year <= 2024; year++) {
           createAndAppendOption(yearSelect, year, year);
