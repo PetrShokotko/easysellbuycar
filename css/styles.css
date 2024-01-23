@@ -1086,7 +1086,9 @@ gap: 10px;
 text-decoration: none;
 }
 
-.footer-link-span{font-size: 13px;}
+.footer-link-span{font-size: 13px;
+color: var(--primary-text-color);
+font-weight: bold;}
 
 .header-tel {}
 
@@ -1095,6 +1097,17 @@ text-decoration: none;
 .phone-icon {}
 
 .footer-icon {}
+.footer-icon-phone{
+fill: #0ab527;
+}
+.footer-icon-viber{
+    fill: #7360F2;
+}
+.footer-icon-instagram{
+    fill: #E4405F;
+}
+.footer-icon-telegram {fill: #09f;}
+
 
 .footer-tel-span {}
 

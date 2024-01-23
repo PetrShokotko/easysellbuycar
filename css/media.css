@@ -125,7 +125,8 @@ padding-bottom: 60px;}
 }
 .header-link.header-tel {width: 162px;}
 .header-btn {width: 162px;}
-.online-status {margin-left: auto;}
+.online-status {margin-left: auto;
+margin-right: auto;}
 .image-container {opacity: 0.9;
 right: 60px;}
 .hero-title {font-size: 72px;}

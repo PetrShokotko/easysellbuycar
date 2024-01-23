@@ -719,6 +719,8 @@ fetch(filePath)
   .catch(error => {
     console.error('Произошла ошибка при загрузке файла:', error);
   });
+
+// ___________________________________ Статус времени работы ____________________________________________
 // const filePath = './js/cars.json';
 // const manufacturerSelect = document.getElementById('makes');
 // const modelSelect = document.getElementById('model');
