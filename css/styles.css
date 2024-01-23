@@ -103,6 +103,9 @@ img {
 
 /* Header */
 header {
+        position: fixed;
+            width: 100%;
+            z-index: 100;
 background: radial-gradient(circle, rgba(51, 105, 147, .85) 0, #002248 100%);
     
 }
@@ -270,7 +273,7 @@ margin: 0 15px;}
     }
 }
 
-
+.main-container {padding-top: 50px;}
 /* HERO */
 /* .hero-container {
     background-color: #2a2a2a;
